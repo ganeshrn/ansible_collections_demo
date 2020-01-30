@@ -1,0 +1,4 @@
+localhost ansible_connection=local
+
+[eos]
+eos02 ansible_host=an-veos-02.ansible.eng.rdu2.redhat.com ansible_user=ansible ansible_ssh_pass=ansible ansible_network_os=arista.eos.eos

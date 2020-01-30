@@ -1,0 +1,27 @@
+- name: calls the ping provided by this collection
+  ping:
+  register: result
+
+- name: print result for calls the ping provided by this collection
+  debug:
+    msg: "{{ result }}"
+
+- name: calls the ping module shipped with ansible
+  ansible.builtin.ping:
+  register: result
+
+- name: print result for calls the ping module shipped with ansible
+  debug:
+    msg: "{{ result }}"
+
+- name: calls the ping module shipped with collection
+  rainbow.test.ping:
+  register: result
+
+- name: print result for ccalls the ping module shipped with collection
+  debug:
+    msg: "{{ result }}"
+
+- name: invoke lookup plugin shipped with collection
+  debug:
+    msg: "{{ lookup('rainbow.test.demolookup') }}"
